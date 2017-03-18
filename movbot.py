@@ -10,13 +10,13 @@ import urllib
 import urllib2
 import sys
 import time
-#from flask import Flask, request
 
 
 # initialize bot
-bot = telebot.TeleBot("343432397:AAG241Ze5k8hiFTo5z7TSgLkSFh7RscPuF4")
+# token didapatkan dari @fatherbot
+bot = telebot.TeleBot("<Bot-Token")
 
-#server = Flask(__name__)
+
 
 # daftar url 
 cinema21_url = {
@@ -178,18 +178,7 @@ def show_film(message):
                                           'yang anda cari dengan benar')
         sys.exit()
 
-#@server.route("/bot", methods=['POST'])
-#def getMessage():
-#    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
-#    return "!", 200
 
-#@server.route("/")
-#def webhook():
-#    bot.remove_webhook()
-#    bot.set_webhook(url="https://herokuProject_url/bot")
-#    return "!", 200
-
-#server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
-#server = Flask(__name__)
 
 bot.polling(none_stop=True)
+# ctrl + c untuk keluar
