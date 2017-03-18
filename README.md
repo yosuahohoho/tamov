@@ -3,4 +3,4 @@ Tamov(Tangerang Movies) adalah telegram bot yang dibuat untuk membantu warga tan
 
 #Project ini tidak diendorse oleh Cinema XXI#
 
-tamov dibuat menggunakan python 2.7
+tamov dibuat menggunakan python 2.7 dan pyTelegramBotApi
