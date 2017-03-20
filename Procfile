@@ -1,1 +1,1 @@
-web: python movbot_heroku.py
+web: python tamov_heroku.py
