@@ -20,7 +20,7 @@ bot = telebot.TeleBot(os.environ["BOT_TOKEN"])
 server = Flask(__name__)
 
 # daftar url
-cinema21_url = {
+URLS = {
     "tangcity": "http://www.21cineplex.com/theater/bioskop-tang-city-xxi,363,TGRTACI.htm",
     "balekota": "http://www.21cineplex.com/theater/bioskop-bale-kota-xxi,341,TGRBAKO.htm",
     "livingworld": "http://www.21cineplex.com/theater/bioskop-living-world-xxi,309,TGRLIWO.htm",
@@ -53,9 +53,9 @@ def user_url(msg, url_dict):
 
     return url
 
-def download_url (msg):
+def download_url(msg):
 
-    url = user_url(msg, cinema21_url)
+    url = user_url(msg, URLS)
     headers = {"Users-Agent": "Mozilla/5.0 (Linux; Intel Linux 10_9_5)\
                AppleWebKit 537.36 (KHTML, like Gecko) Chrome",
                "Accept": "text/html,application/xhtml+xml,application/xml;\
@@ -187,7 +187,7 @@ def getMessage():
 @server.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://thawing-cove-33377.herokuapp.com/bot")
+    bot.set_webhook(url="Heroku webhook")
     return "!", 200
 
 server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
